@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+/****** Main Layout *****/
+#page-container {
+    position: relative;
+    min-height: 100vh;
+    display: inline-block;
+    width: 100%;
+}
+
+app-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 98;
+    color: #000;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.custom-btn,
+.custom-btn:hover,
+.custom-btn:focus,
+.custom-btn:active {
+    background-color: #000;
+    border: 2px solid #fff;
+    border-left: 0;
+}
+
+.custom-btn:hover {
+    color: #ff7900;
+}
+
+.icon-search {
+    font-size: 24px;
+}
+
+input.form-control.form-control-lg.bg-transparent.text-white.border.border-2.border-white,
+input.form-control.form-control-lg.bg-transparent.text-white.border.border-2.border-white:hover,
+input.form-control.form-control-lg.bg-transparent.text-white.border.border-2.border-white:focus,
+input.form-control.form-control-lg.bg-transparent.text-white.border.border-2.border-white:active {
+    border-right: 0 !important;
+}
+
+#Search::-webkit-search-cancel-button {
+    color: #fff;
+}
+
+.img-thumbnail {
+    border: 1px;
+}
+
+.dimiss-result {
+    position: relative;
+}
+
+.btn.dimiss-result-icon {
+    position: absolute;
+    right: 52px;
+    top: 6px;
+    border: 0;
+    z-index: 10;
+}

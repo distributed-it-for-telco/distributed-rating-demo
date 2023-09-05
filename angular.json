@@ -30,9 +30,16 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/boosted/dist/css/boosted.css",
+              "./node_modules/boosted/dist/css/orange-helvetica.css",
+              "./src/assets/icomoon/icomoon.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "./node_modules/boosted/dist/js/boosted.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,9 +100,16 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/boosted/dist/css/boosted.css",
+              "./node_modules/boosted/dist/css/orange-helvetica.css",
+              "./src/assets/icomoon/icomoon.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "./node_modules/boosted/dist/js/boosted.min.js"
+            ]
           }
         }
       }
