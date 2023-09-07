@@ -14,12 +14,12 @@ export class Product {
     productOffering: ProductOffering;
     productPrice: ProductPrice;
 
-    constructor(apiModel: any) {
-        this.id = apiModel.id || null;
-        this.partnerId = apiModel.partnerId || null;
-        this.description = apiModel.description || null;
-        this.productOffering = apiModel.productOffering || null;
-        this.productPrice = apiModel.productPrice || null;
+    constructor(apiModel: any = null) {
+        this.id = apiModel?.id || null;
+        this.partnerId = apiModel?.partnerId || null;
+        this.description = apiModel?.description || null;
+        this.productOffering = apiModel?.productOffering || null;
+        this.productPrice = apiModel?.productPrice || null;
 
     }
 }
@@ -57,5 +57,15 @@ export class ProductPrice {
         this.price = apiModel.price || null;
     }
 }
+
+export class ProductRating {
+    billingInformation: any;
+    authorizationStatus: any;
+    constructor(apiModel: any = null) {
+        this.billingInformation = apiModel?.billingInformation || null;
+        this.authorizationStatus = apiModel?.authorizationStatus || null;
+    }
+}
+
 
 

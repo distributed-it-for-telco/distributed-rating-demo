@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RatingService } from './rating.service';
-import { ProductOfferResponse } from './product.model';
+import { ProductOfferResponse, ProductRating } from './product.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RatingModalComponent } from './rating-modal/rating-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -14,14 +16,14 @@ export class HomeComponent implements OnInit {
   successModaldisplayStyle: string;
   errorModaldisplayStyle: string;
 
-  constructor(private ratingService: RatingService) {
+  constructor(private ratingService: RatingService, private modalService: NgbModal) {
     this.searchId = "";
     this.successModaldisplayStyle = "none";
     this.errorModaldisplayStyle = "none";
+    this.productList = [];
   }
 
   ngOnInit(): void {
-    this.productList = [];
     this.searchId = "";
   }
 
@@ -32,9 +34,17 @@ export class HomeComponent implements OnInit {
     }, 100)
   }
 
-  useOffer(item: ProductOfferResponse) {
-    this.ratingService.useOffer(item.relatedParty.id, item.product.productOffering.agentId, item.product.productOffering.id)
-      .subscribe(res => this.successModaldisplayStyle = "block")
+  useOffer(productOfferResponse: ProductOfferResponse) {
+    this.ratingService
+      .useOffer(productOfferResponse.relatedParty.id, productOfferResponse.product.productOffering.agentId, productOfferResponse.product.productOffering.id)
+      .subscribe(res => {
+        const modalRef = this.modalService.open(RatingModalComponent, {
+          centered: true,
+          size: 'xl',
+          backdrop: 'static'
+        })
+        modalRef.componentInstance.productRating = new ProductRating(res);
+        modalRef.componentInstance.product = productOfferResponse.product;
+      })
   }
-
 }
