@@ -55,13 +55,13 @@
                         <h4 class="card-title">{{item.product.productOffering.name}}</h4>
                         <p class="card-text fw-bold text-muted mb-3">{{item.product.description}}</p>
                         <p class="fs-3 text-primary fw-bold">
-                            € {{item.product.productPrice.price.value}}
+                            {{item.product.productPrice.price.value}} {{item.product.productPrice.price.unit}}
                         </p>
                         <p class="card-text fw-bold text-muted mb-3">{{item.product.productPrice.description}}</p>
                         <div class="d-flex justify-content-between">
-                            <a href="#" class="btn btn-secondary" aria-label="Link description" title="Link description"
-                                data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Use Product</a>
+                            <button class="btn btn-secondary" aria-label="Link description" title="Link description"
+                                (click)="useOffer(item)">
+                                Use Product</button>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,8 @@
 
 
 <!-- Success Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    [ngStyle]="{'display':successModaldisplayStyle}">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -119,7 +120,8 @@
     </div>
 </div>
 <!-- Error Modal -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true"
+    [ngStyle]="{'display':errorModaldisplayStyle}">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">

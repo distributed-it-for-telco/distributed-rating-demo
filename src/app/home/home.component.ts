@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RatingService } from './rating-service.service';
+import { RatingService } from './rating.service';
+import { ProductOfferResponse } from './product.model';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,14 @@ import { RatingService } from './rating-service.service';
 export class HomeComponent implements OnInit {
 
   searchId: string;
-  productList: any[] = [];
+  productList: ProductOfferResponse[] = [];
+  successModaldisplayStyle: string;
+  errorModaldisplayStyle: string;
 
   constructor(private ratingService: RatingService) {
     this.searchId = "";
+    this.successModaldisplayStyle = "none";
+    this.errorModaldisplayStyle = "none";
   }
 
   ngOnInit(): void {
@@ -25,6 +30,11 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       document.getElementById("results")?.scrollIntoView();
     }, 100)
+  }
+
+  useOffer(item: ProductOfferResponse) {
+    this.ratingService.useOffer(item.relatedParty.id, item.product.productOffering.agentId, item.product.productOffering.id)
+      .subscribe(res => this.successModaldisplayStyle = "block")
   }
 
 }
