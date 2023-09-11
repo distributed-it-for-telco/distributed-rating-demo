@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RatingModalComponent } from './home/rating-modal/rating-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { VendorComponent } from './vendor/vendor.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     HeaderComponent,
     RatingModalComponent,
+    VendorComponent,
   ],
   imports: [
     BrowserModule,
