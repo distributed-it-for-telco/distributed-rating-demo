@@ -65,3 +65,17 @@ input.form-control.form-control-lg.bg-transparent.text-white.border.border-2.bor
     border: 0;
     z-index: 10;
 }
+
+.image-card-position {
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    mix-blend-mode: multiply;
+}
+
+.font-48 {
+    font-size: 48px;
+}
+.btn.sort-btn {
+    border: 0;
+}

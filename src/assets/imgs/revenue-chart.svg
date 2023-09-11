@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="277" height="134" viewBox="0 0 277 134">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3874" data-name="Rectangle 3874" width="277" height="134" transform="translate(350 232)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.587" y1="0.853" x2="0.528" y2="0.199" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0079ff" stop-opacity="0.302"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="0.5" x2="0.57" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="1" x2="0.546" xlink:href="#linear-gradient-2"/>
+  </defs>
+  <g id="Mask_Group_6134" data-name="Mask Group 6134" transform="translate(-350 -232)" clip-path="url(#clip-path)">
+    <g id="Group_7101" data-name="Group 7101">
+      <g id="Group_7108" data-name="Group 7108" transform="translate(-234.617 -910.75)">
+        <path id="Path_14622" data-name="Path 14622" d="M71.293,150.833a31.49,31.49,0,0,1,42.743-29.39c8.279,3.172,15.321,9.84,24.136,10.735,9.5.976,18.363-5.14,24.527-12.41,6.18-7.27,10.621-15.923,17.126-22.9s16.1-12.3,25.373-10.035c7.433,1.822,13.093,8.1,20.428,10.23,9.4,2.716,19.485-1.984,26.8-8.49S265.311,73.8,272.549,67.217c18.558-16.915,48.11-20.4,70.1-8.262v121.69H66.82l4.456-29.813Z" transform="translate(517.797 1116)" fill="url(#linear-gradient)" style="mix-blend-mode: multiply;isolation: isolate"/>
+        <path id="Path_14623" data-name="Path 14623" d="M69.57,150.833a31.49,31.49,0,0,1,42.743-29.39c8.279,3.172,15.321,9.84,24.136,10.735,9.5.976,18.363-5.14,24.527-12.41,6.18-7.27,10.621-15.923,17.126-22.9s16.1-12.3,25.372-10.035c7.433,1.822,13.093,8.1,20.428,10.23,9.4,2.716,19.485-1.984,26.8-8.49S263.588,73.8,270.826,67.217c18.558-16.915,48.11-20.4,70.1-8.262" transform="translate(519.52 1116)" fill="none" stroke="#085ebd" stroke-miterlimit="10" stroke-width="1"/>
+      </g>
+      <rect id="Rectangle_3872" data-name="Rectangle 3872" width="263" height="112" transform="translate(350 257)" fill="url(#linear-gradient-2)"/>
+      <rect id="Rectangle_3873" data-name="Rectangle 3873" width="261" height="137" transform="translate(367 232)" fill="url(#linear-gradient-3)"/>
+    </g>
+  </g>
+</svg>
