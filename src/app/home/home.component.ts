@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RatingService } from './rating.service';
-import { ProductOfferResponse, ProductRating } from './product.model';
+import { Product, ProductRating } from './product.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RatingModalComponent } from './rating-modal/rating-modal.component';
 
@@ -12,7 +12,7 @@ import { RatingModalComponent } from './rating-modal/rating-modal.component';
 export class HomeComponent implements OnInit {
 
   searchId: string;
-  productList: ProductOfferResponse[] = [];
+  productList: Product[] = [];
   successModaldisplayStyle: string;
   errorModaldisplayStyle: string;
 
@@ -34,9 +34,9 @@ export class HomeComponent implements OnInit {
     }, 100)
   }
 
-  useOffer(productOfferResponse: ProductOfferResponse) {
+  useOffer(product: Product) {
     this.ratingService
-      .useOffer(productOfferResponse.relatedParty.id, productOfferResponse.product.productOffering.agentId, productOfferResponse.product.productOffering.id)
+      .useOffer(this.searchId, product.productOffering.agentId, product.productOffering.id)
       .subscribe(res => {
         const modalRef = this.modalService.open(RatingModalComponent, {
           centered: true,
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
           backdrop: 'static'
         })
         modalRef.componentInstance.productRating = new ProductRating(res);
-        modalRef.componentInstance.product = productOfferResponse.product;
+        modalRef.componentInstance.product = product;
       })
   }
 }

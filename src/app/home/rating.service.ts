@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { ProductOfferResponse } from './product.model';
+import { Product } from './product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class RatingService {
   constructor(private http: HttpClient) { }
 
   getOffers(partyId: string) {
-    return this.http.get<ProductOfferResponse[]>(`${environment.api.base}/party/${partyId}/offers`)
+    return this.http.get<Product[]>(`${environment.api.base}/party/${partyId}/offers`)
   }
 
   useOffer(customerId: string, agentId: string, offerId: string) {

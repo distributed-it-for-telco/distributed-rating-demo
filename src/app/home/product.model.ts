@@ -1,11 +1,3 @@
-export class ProductOfferResponse {
-    relatedParty: Party;
-    product: Product
-    constructor(apiModel: any) {
-        this.relatedParty = apiModel.relatedParty || null;
-        this.product = apiModel.product || null;
-    }
-}
 
 export class Product {
     partnerId: any;
