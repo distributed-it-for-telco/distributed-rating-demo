@@ -9,7 +9,10 @@ import { VendorUsageProof } from './vendor.model';
 })
 export class VendorComponent {
 
-  vendorList = [{ id: 1, name: "AWS" }, { id: 2, name: "Netflix" }]
+  vendorList = [
+    { id: "usage_collector_orange", name: "Orange" },
+    { id: "usage_collector_video_provider", name: "Video Provider" }
+  ];
   selectedVendorId: any = "";
   usageList: VendorUsageProof[] = [];
   totalCost: number = 0;
@@ -27,7 +30,7 @@ export class VendorComponent {
       this.ratingService.getVendorUsageProof(this.selectedVendorId).subscribe(res => {
         this.usageList = res;
         this.totalCost = this.usageList.reduce(function (previousVal, currentVal) {
-          return previousVal + currentVal.ratedProductUsage.bucketValueConvertedInAmount.value;
+          return previousVal + parseFloat(currentVal.ratedProductUsage.bucketValueConvertedInAmount.value);
         }, 0);
       })
     }

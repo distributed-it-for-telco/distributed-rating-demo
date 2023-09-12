@@ -12,7 +12,7 @@ export class RatingService {
   constructor(private http: HttpClient) { }
 
   getOffers(partyId: string) {
-    return this.http.get<Product[]>(`${environment.api.base}/party/${partyId}/offers`)
+    return this.http.get<Product[]>(`${environment.api.base}/party/${partyId}/offers/Orange`)
   }
 
   useOffer(customerId: string, agentId: string, offerId: string) {
@@ -34,11 +34,6 @@ export class RatingService {
   }
 
   getVendorUsageProof(vendorId: string) {
-    return this.http.get<VendorUsageProof[]>(`${environment.api.base}/collector/${vendorId}/list`)
-
+    return this.http.get<VendorUsageProof[]>(`${environment.api.base}/usage/rating-proofs/${vendorId}`)
   }
-
-
-
-
 }
