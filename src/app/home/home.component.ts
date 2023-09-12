@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RatingService } from './rating.service';
+import { RatingService } from '../rating.service';
 import { Product, ProductRating } from './product.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RatingModalComponent } from './rating-modal/rating-modal.component';

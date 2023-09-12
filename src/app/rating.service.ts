@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Product } from './product.model';
+import { Product } from './home/product.model';
+import { VendorUsageProof } from './vendor/vendor.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,11 @@ export class RatingService {
       "offerId": offerId
     }
     )
+  }
+
+  getVendorUsageProof(vendorId: string) {
+    return this.http.get<VendorUsageProof[]>(`${environment.api.base}/collector/${vendorId}/list`)
+
   }
 
 
