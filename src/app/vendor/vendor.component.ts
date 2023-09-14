@@ -11,7 +11,7 @@ export class VendorComponent {
 
   vendorList = [
     { id: "usage_collector_orange", name: "Orange" },
-    { id: "usage_collector_video_provider", name: "Video Provider" }
+    { id: "usage_collector_video_provider", name: "Streamzier" }
   ];
   selectedVendorId: any = "";
   usageList: VendorUsageProof[] = [];

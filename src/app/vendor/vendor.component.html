@@ -54,6 +54,9 @@
                             <th scope="col">Customer ID
                                 <!-- <span class="btn sort-btn dropdown-toggle" type="button" aria-expanded="false"></span> -->
                             </th>
+                            <th scope="col">Product Name
+                                <!-- <span class="btn sort-btn dropdown-toggle" type="button" aria-expanded="false"></span> -->
+                            </th>
                             <th scope="col">Date of Usage
                                 <!-- <span class="btn sort-btn dropdown-toggle" type="button" aria-expanded="false"></span> -->
                             </th>
@@ -64,14 +67,15 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let usageProof of usageList">
-                            <th>
+                            <td>
                                 {{usageProof.relatedParty.id}}
-                            </th>
+                            </td>
+                            <td>{{usageProof.ratedProductUsage.productRef.name}}</td>
                             <td>{{usageProof.usageDate }}</td>
-                            <th class="text-primary">
+                            <td class="text-primary">
                                 {{usageProof.ratedProductUsage.bucketValueConvertedInAmount.value }}
                                 {{usageProof.ratedProductUsage.bucketValueConvertedInAmount.unit }}
-                            </th>
+                            </td>
                         </tr>
 
                     </tbody>
