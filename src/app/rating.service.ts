@@ -9,14 +9,17 @@ import { VendorUsageProof } from './vendor/vendor.model';
 })
 export class RatingService {
 
+  ORANGE_PROD_INVENTORY_ID = 'orange_inventory';
+  BASE_URL = '/api';
+  
   constructor(private http: HttpClient) { }
 
   getOffers(partyId: string) {
-    return this.http.get<Product[]>(`${environment.api.base}/party/${partyId}/offers/Orange`)
+    return this.http.get<Product[]>(`${this.BASE_URL}/party/${partyId}/offers/${this.ORANGE_PROD_INVENTORY_ID}`)
   }
 
   useOffer(customerId: string, agentId: string, offerId: string) {
-    return this.http.post(`${environment.api.base}/usage/rating`, {
+    return this.http.post(`${this.BASE_URL}/usage/rating`, {
       "customerId": customerId,
       "usage": {
         "usageCharacteristicList": [
@@ -34,6 +37,6 @@ export class RatingService {
   }
 
   getVendorUsageProof(vendorId: string) {
-    return this.http.get<VendorUsageProof[]>(`${environment.api.base}/usage/rating-proofs/${vendorId}`)
+    return this.http.get<VendorUsageProof[]>(`${this.BASE_URL}/usage/rating-proofs/${vendorId}`)
   }
 }

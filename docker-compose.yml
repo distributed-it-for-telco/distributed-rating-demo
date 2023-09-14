@@ -1,0 +1,13 @@
+version: '3'
+services:
+  rating-simulator:
+    container_name: rating-simulator
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    image: rating-simulator:latest
+    restart: always
+    ports:
+      - "80:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
