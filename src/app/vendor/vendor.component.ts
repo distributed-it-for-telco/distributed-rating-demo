@@ -34,6 +34,7 @@ export class VendorComponent {
     } else {
       this.ratingService.getVendorUsageProof(this.selectedVendorId).subscribe(res => {
         this.usageList = res;
+        this.usageList= this.usageList.reverse();
         this.totalCost = this.usageList.reduce(function (previousVal, currentVal) {
           return previousVal + parseFloat(currentVal.ratedProductUsage.bucketValueConvertedInAmount.value);
         }, 0);
