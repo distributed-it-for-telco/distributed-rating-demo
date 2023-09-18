@@ -52,7 +52,7 @@ export class VendorComponent {
 
       if (this.productMap.has(productId)) {
         const existingProduct = this.productMap.get(productId)!;
-        existingProduct.totalRevenue += value;
+        existingProduct.totalRevenue += parseFloat(value);
         existingProduct.totalTransactions += 1;
       } else {
         this.productMap.set(productId, {
