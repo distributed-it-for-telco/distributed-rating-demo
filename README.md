@@ -1,3 +1,11 @@
+# How to start the demo 
+  in the project files you will find file called "restart.sh" . run this script "./restart.sh" , this will pull the image from github and start a container .
+  you can access the demo from browser open http://localhost/ 
+  
+
+
+
+
 # DistrbutedRatingSimulator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
