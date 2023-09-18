@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RatingService } from '../rating.service';
-import { VendorUsageProof } from './vendor.model';
+import { Product, VendorUsageProof } from './vendor.model';
 
 @Component({
   selector: 'app-vendor',
@@ -11,11 +11,14 @@ export class VendorComponent {
 
   vendorList = [
     { id: "usage_collector_orange", name: "Orange" },
-    { id: "usage_collector_video_provider", name: "Streamzier" }
+    { id: "usage_collector_video_provider", name: "Streamzie" }
   ];
   selectedVendorId: any = "";
   usageList: VendorUsageProof[] = [];
   totalCost: number = 0;
+
+  productListMapped: Product[] = [];
+  productMap = new Map<number, Product>();
 
   constructor(private ratingService: RatingService) {
 
@@ -33,9 +36,34 @@ export class VendorComponent {
           return previousVal + parseFloat(currentVal.ratedProductUsage.bucketValueConvertedInAmount.value);
         }, 0);
       })
+      this.getProductList();
     }
 
   }
 
+  getProductList() {
+    this.usageList.forEach((product) => {
+      const { ratedProductUsage } = product;
+      const { value, unit } = ratedProductUsage.bucketValueConvertedInAmount;
+      const { id: productId, name } = ratedProductUsage.productRef;
 
+      if (this.productMap.has(productId)) {
+        const existingProduct = this.productMap.get(productId)!;
+        existingProduct.totalRevenue += value;
+        existingProduct.totalTransactions += 1;
+      } else {
+        this.productMap.set(productId, {
+          id: productId,
+          name: name,
+          totalRevenue: value,
+          totalRevenueUnit: unit,
+          totalTransactions: 1,
+        });
+      }
+    });
+
+    this.productListMapped = Array.from(this.productMap.values());
+
+    console.log(this.productListMapped);
+  }
 }

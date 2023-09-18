@@ -1,11 +1,18 @@
 <div class="container-xxl py-4">
     <div class="row">
         <div class="col-sm-6 col-md-3 mb-3">
-            <label for="selectTitle" id="selectTitleLabel" class="form-label">Select Vendor</label>
-            <select class="form-select" id="selectTitle" aria-labelledby="selectTitleLabel selectTitleFeedback"
-                [ngModel]="selectedVendorId" (ngModelChange)="onSelectVendor($event)">
-                <option [value]="" selected></option>
-                <option *ngFor="let vendor of vendorList" [value]="vendor.id">{{vendor.name}}</option>
+            <label for="selectTitle"
+                   id="selectTitleLabel"
+                   class="form-label">Select Vendor</label>
+            <select class="form-select"
+                    id="selectTitle"
+                    aria-labelledby="selectTitleLabel selectTitleFeedback"
+                    [ngModel]="selectedVendorId"
+                    (ngModelChange)="onSelectVendor($event)">
+                <option [value]=""
+                        selected></option>
+                <option *ngFor="let vendor of vendorList"
+                        [value]="vendor.id">{{vendor.name}}</option>
             </select>
         </div>
     </div>
@@ -21,7 +28,9 @@
                             </h1>
                         </div>
                         <div class="position-relative">
-                            <img alt="" src="../../assets/imgs/revenue-chart.svg" class="image-card-position">
+                            <img alt=""
+                                 src="../../assets/imgs/revenue-chart.svg"
+                                 class="image-card-position">
                         </div>
                     </div>
                 </div>
@@ -38,14 +47,58 @@
                             </h1>
                         </div>
                         <div class="position-relative">
-                            <img alt="" src="../../assets/imgs/transactions-chart.svg" class="image-card-position">
+                            <img alt=""
+                                 src="../../assets/imgs/transactions-chart.svg"
+                                 class="image-card-position">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row" *ngIf="usageList.length !== 0">
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="scrolling-wrapper">
+                <div *ngFor="let product of productListMapped"
+                     class="card"
+                     style="width: 18rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle">{{product.name}}</h6>
+                        <div class="table-responsive">
+                            <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5">
+                                <tbody class="fw-semibold product-list">
+                                    <tr>
+                                        <td class="text-muted product-item blue">
+                                            <div class="d-flex align-items-center">
+                                                Total Revenue
+                                            </div>
+                                        </td>
+                                        <td class="fw-bold text-end">
+                                            {{product.totalRevenue}}
+                                            {{product.totalRevenueUnit}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-muted product-item purple">
+                                            <div class="d-flex align-items-center">
+                                                Totals Transactions
+                                            </div>
+                                        </td>
+                                        <td class="fw-bold text-end">
+                                            {{product.totalTransactions}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row"
+         *ngIf="usageList.length !== 0">
         <div class="col-12">
             <div class="table-responsive mt-4">
                 <table class="table align-middle">
