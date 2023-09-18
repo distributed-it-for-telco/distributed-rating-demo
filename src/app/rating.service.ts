@@ -11,14 +11,16 @@ export class RatingService {
 
   ORANGE_PROD_INVENTORY_ID = 'orange_inventory';
   BASE_URL = '/api';
-  
+
   constructor(private http: HttpClient) { }
 
-  getOffers(partyId: string) {
-    return this.http.get<Product[]>(`${this.BASE_URL}/party/${partyId}/offers/${this.ORANGE_PROD_INVENTORY_ID}`)
+  getOffers(partyId: string, extraHttpHeaders?: any) {
+    return this.http.get<Product[]>(`${this.BASE_URL}/party/${partyId}/offers/${this.ORANGE_PROD_INVENTORY_ID}`, {
+      headers: extraHttpHeaders
+    })
   }
 
-  useOffer(customerId: string, agentId: string, offerId: string) {
+  useOffer(customerId: string, agentId: string, offerId: string, extraHttpHeaders?: any) {
     return this.http.post(`${this.BASE_URL}/usage/rating`, {
       "customerId": customerId,
       "usage": {
@@ -31,9 +33,10 @@ export class RatingService {
         ]
       },
       "agentId": agentId,
-      "offerId": offerId
-    }
-    )
+      "offerId": offerId,
+    }, {
+      headers: extraHttpHeaders
+    })
   }
 
   getVendorUsageProof(vendorId: string) {
