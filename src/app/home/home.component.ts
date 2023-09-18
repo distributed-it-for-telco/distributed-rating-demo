@@ -32,7 +32,8 @@ export class HomeComponent implements OnInit {
   }
 
   onToggle() {
-    this.extraHttpHeaders = new HttpHeaders({ 'cf-ipcountry': 'EG' })
+    this.extraHttpHeaders = new HttpHeaders({ 'cf-ipcountry': 'EG' });
+    this.onClickSearch();
   }
 
   onClickSearch() {
