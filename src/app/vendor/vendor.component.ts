@@ -58,7 +58,7 @@ export class VendorComponent {
         this.productMap.set(productId, {
           id: productId,
           name: name,
-          totalRevenue: value,
+          totalRevenue: parseFloat(value),
           totalRevenueUnit: unit,
           totalTransactions: 1,
         });
