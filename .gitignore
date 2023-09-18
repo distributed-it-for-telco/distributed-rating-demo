@@ -102,4 +102,3 @@ testem.log
 .DS_Store
 Thumbs.db
 /.scannerwork/
-start.sh

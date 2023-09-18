@@ -2,10 +2,10 @@ version: '3'
 services:
   rating-simulator:
     container_name: rating-simulator
-    build:
-        context: .
-        dockerfile: ./Dockerfile
-    image: rating-simulator:latest
+    # build:
+    #     context: .
+    #     dockerfile: ./Dockerfile
+    image: ghcr.io/distributed-it-for-telco/distributed-rating-demo:latest
     restart: always
     ports:
       - "80:80"
