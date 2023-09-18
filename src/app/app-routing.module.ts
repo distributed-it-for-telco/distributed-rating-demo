@@ -5,15 +5,15 @@ import { VendorComponent } from './vendor/vendor.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'customer',
     component: HomeComponent,
   },
   {
     path: 'vendor',
     component: VendorComponent,
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' },
+  { path: '', redirectTo: 'customer', pathMatch: 'full' },
+  { path: '**', redirectTo: 'customer' },
 ];
 
 
