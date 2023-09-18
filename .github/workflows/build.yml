@@ -41,6 +41,7 @@ jobs:
       with:
         image: distributed-rating-demo
         tags: latest
+        multiPlatform: true
         platform: linux/amd64, linux/arm64, linux/arm64/v8
         registry: ghcr.io
         username: ${{ github.actor }}
