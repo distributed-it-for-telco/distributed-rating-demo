@@ -1,19 +1,38 @@
 <header class="sticky-top">
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg"
-        aria-label="Global navigation - With title and nav-under example">
+         aria-label="Global navigation - With custom logo example">
         <div class="container-xxl">
             <div class="navbar-brand me-auto">
-                <a class="stretched-link" href="#">
-                    <img src="../../../assets/imgs/orange-logo.svg" width="50" height="50" alt="Boosted - Back to Home"
-                        loading="lazy">
+                <a class="stretched-link"
+                   href="#">
+                    <img src="assets/imgs/orange-logo.svg"
+                         width="50"
+                         height="50"
+                         alt="Boosted - Back to Home"
+                         loading="lazy">
                 </a>
                 <h1 class="title">Rating App</h1>
             </div>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target=".global-header-3-1" aria-controls="global-header-3-1.1 global-header-3-1.2"
-                aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target=".global-header-5"
+                    aria-controls="global-header-5.1 global-header-5.2"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div id="global-header-5.1"
+                 class="navbar-collapse collapse me-lg-3 global-header-5">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a [ngClass]="{'nav-link':true, 'active':currentRoute==='/customer'}"
+                           href="/customer"
+                           aria-current="page">Customer</a></li>
+                    <li class="nav-item"><a [ngClass]="{'nav-link':true, 'active':currentRoute==='/vendor'}"
+                           href="/vendor">Vendor</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+
 </header>

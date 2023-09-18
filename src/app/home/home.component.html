@@ -9,7 +9,10 @@
                     products and pick your best match</p>
             </div>
             <div class="col-12 col-lg-6 out-of-grid h-100 end-0 overflow-hidden">
-                <img loading="lazy" class="h-100 object-fit-cover" alt="" src="../../assets/imgs/landing-img.svg">
+                <img loading="lazy"
+                     class="h-100 object-fit-cover"
+                     alt=""
+                     src="../../assets/imgs/landing-img.svg">
             </div>
         </div>
     </div>
@@ -20,10 +23,15 @@
             <div class="col-12 py-4 bg-dark">
                 <div class="input-group dimiss-result">
                     <input class="form-control form-control-lg bg-transparent text-white border border-2 border-white"
-                        type="search" placeholder="Search Your ID" aria-label="Search" [(ngModel)]="searchId"
-                        (keydown.enter)="onClickSearch()" />
-                    <button class="btn btn-dark btn-lg custom-btn" type="button" id="button-addon2"
-                        (click)="onClickSearch()">
+                           type="search"
+                           placeholder="Search Your ID"
+                           aria-label="Search"
+                           [(ngModel)]="searchId"
+                           (keydown.enter)="onClickSearch()" />
+                    <button class="btn btn-dark btn-lg custom-btn"
+                            type="button"
+                            id="button-addon2"
+                            (click)="onClickSearch()">
                         <em class="icon-search"></em>
                     </button>
                     <!-- show after search to clear search result -->
@@ -36,20 +44,35 @@
     </div>
 </div>
 
-<div #results id="results" class="container-xxl position-relative z-1">
+<div #results
+     id="results"
+     class="container-xxl position-relative z-1">
     <div *ngIf="productList.length !== 0">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-between align-items-center">
                 <h2 class="mt-4">
                     Subscribed Products
                 </h2>
+                <div class="form-check form-switch form-check-reverse">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           id="flexSwitchCheckReverse"
+                           (click)="onToggle()">
+                    <label class="form-check-label"
+                           for="flexSwitchCheckReverse">From Egypt</label>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-4 col-lg-3" *ngFor="let product of productList">
+            <div class="col-12 col-md-4 col-lg-3"
+                 *ngFor="let product of productList">
                 <div class="card mb-3">
-                    <div class="bd-placeholder-img card-img-top" width="100%" height="170">
-                        <img src="../../assets/imgs/default-img.png" class="img-fluid img-thumbnail" alt="...">
+                    <div class="bd-placeholder-img card-img-top"
+                         width="100%"
+                         height="170">
+                        <img src="../../assets/imgs/default-img.png"
+                             class="img-fluid img-thumbnail"
+                             alt="...">
                     </div>
                     <div class="card-body text-black bg-body">
                         <h4 class="card-title">{{product.productOffering.name}}</h4>
@@ -59,8 +82,10 @@
                         </p>
                         <p class="card-text fw-bold text-muted mb-3">{{product.productPrice.description}}</p>
                         <div class="d-flex justify-content-between">
-                            <button class="btn btn-secondary" aria-label="Link description" title="Link description"
-                                (click)="useOffer(product)">
+                            <button class="btn btn-secondary"
+                                    aria-label="Link description"
+                                    title="Link description"
+                                    (click)="useOffer(product)">
                                 Use Product</button>
                         </div>
                     </div>
@@ -73,17 +98,30 @@
 
 
 <!-- Success Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-    [ngStyle]="{'display':successModaldisplayStyle}">
+<div class="modal fade"
+     id="exampleModal"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true"
+     [ngStyle]="{'display':successModaldisplayStyle}">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title h6" id="exampleModal2Label">
-                    <img src="../../assets/imgs/success-icon.svg" width="30" height="30" alt="..." class="me-2">
+                <h3 class="modal-title h6"
+                    id="exampleModal2Label">
+                    <img src="../../assets/imgs/success-icon.svg"
+                         width="30"
+                         height="30"
+                         alt="..."
+                         class="me-2">
                     You are authorized to use the product
                 </h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" data-bs-title="Close"><span class="visually-hidden">Close</span></button>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-title="Close"><span class="visually-hidden">Close</span></button>
             </div>
             <div class="border-top border-light my-3"></div>
             <div class="modal-body">
@@ -104,8 +142,11 @@
                         </p>
                     </div>
                     <div class="col-4">
-                        <img src="../../assets/imgs/disney-plus-thumbnail.png" width="120" height="120" alt="..."
-                            class="float-end">
+                        <img src="../../assets/imgs/disney-plus-thumbnail.png"
+                             width="120"
+                             height="120"
+                             alt="..."
+                             class="float-end">
                     </div>
                 </div>
                 <h6 class="mb-2 mt-3">
@@ -120,17 +161,30 @@
     </div>
 </div>
 <!-- Error Modal -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true"
-    [ngStyle]="{'display':errorModaldisplayStyle}">
+<div class="modal fade"
+     id="exampleModal2"
+     tabindex="-1"
+     aria-labelledby="exampleModal2Label"
+     aria-hidden="true"
+     [ngStyle]="{'display':errorModaldisplayStyle}">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title h6" id="exampleModal2Label">
-                    <img src="../../assets/imgs/error-icon.svg" width="30" height="30" alt="..." class="me-2">
+                <h3 class="modal-title h6"
+                    id="exampleModal2Label">
+                    <img src="../../assets/imgs/error-icon.svg"
+                         width="30"
+                         height="30"
+                         alt="..."
+                         class="me-2">
                     You are not authorized to use the product
                 </h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" data-bs-title="Close"><span class="visually-hidden">Close</span></button>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-title="Close"><span class="visually-hidden">Close</span></button>
             </div>
             <div class="border-top border-light my-3"></div>
             <div class="modal-body">
@@ -151,8 +205,11 @@
                         </p>
                     </div>
                     <div class="col-4">
-                        <img src="../../assets/imgs/disney-plus-thumbnail.png" width="120" height="120" alt="..."
-                            class="float-end">
+                        <img src="../../assets/imgs/disney-plus-thumbnail.png"
+                             width="120"
+                             height="120"
+                             alt="..."
+                             class="float-end">
                     </div>
                 </div>
                 <h6 class="mb-2 mt-3">
