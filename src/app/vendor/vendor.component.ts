@@ -26,6 +26,8 @@ export class VendorComponent {
 
   onSelectVendor(newValue: any) {
     this.selectedVendorId = newValue;
+    this.productListMapped = [];
+    
     if (this.selectedVendorId == '') {
       this.totalCost = 0;
       this.usageList = [];
@@ -35,13 +37,14 @@ export class VendorComponent {
         this.totalCost = this.usageList.reduce(function (previousVal, currentVal) {
           return previousVal + parseFloat(currentVal.ratedProductUsage.bucketValueConvertedInAmount.value);
         }, 0);
+        this.getProductList();
       })
-      this.getProductList();
     }
 
   }
 
   getProductList() {
+    this.productMap.clear();
     this.usageList.forEach((product) => {
       const { ratedProductUsage } = product;
       const { value, unit } = ratedProductUsage.bucketValueConvertedInAmount;
@@ -63,7 +66,5 @@ export class VendorComponent {
     });
 
     this.productListMapped = Array.from(this.productMap.values());
-
-    console.log(this.productListMapped);
   }
 }
